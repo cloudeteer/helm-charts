@@ -1,0 +1,11 @@
+apiVersion: v2
+name: m365-exporter
+description: A Helm chart for m365-exporter
+type: application
+version: 1.0.0
+# renovate: docker=ghcr.io/cloudeteer/m365-exporter
+appVersion: 3.1.0
+maintainers:
+  - name: cloudeteer
+    email: engineering@cloudeteer.de
+    url: https://cloudeteer.de
