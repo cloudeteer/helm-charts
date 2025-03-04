@@ -33,6 +33,8 @@ jobs:
           VALIDATE_GITHUB_ACTIONS: true
           VALIDATE_GITLEAKS: true
           VALIDATE_JSON: true
+          # breaks generated readme because url not being in capital letters
+          # textfilelintignore not working https://github.com/super-linter/super-linter/issues/2688
           VALIDATE_NATURAL_LANGUAGE: true
           VALIDATE_PYTHON: true
           VALIDATE_RENOVATE: true
