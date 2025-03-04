@@ -21,6 +21,7 @@ helm install m365-exporter oci://ghcr.io/cloudeteer/charts/m365-exporter
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
+| config.oneDrive.scrambleNames | bool | `true` |  |
 | env | object | `{}` |  |
 | extraVolumeMounts | list | `[]` |  |
 | extraVolumes | list | `[]` |  |
@@ -34,7 +35,6 @@ helm install m365-exporter oci://ghcr.io/cloudeteer/charts/m365-exporter
 | livenessProbe.httpGet.path | string | `"/health"` |  |
 | livenessProbe.httpGet.port | string | `"http"` |  |
 | livenessProbe.initialDelaySeconds | int | `10` |  |
-| m365Exporter.oneDrive.scrambleNames | bool | `true` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector."kubernetes.io/os" | string | `"linux"` |  |
 | podAnnotations | object | `{}` |  |
