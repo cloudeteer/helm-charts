@@ -1,0 +1,18 @@
+apiVersion: v1
+entries:
+  m365-exporter:
+  - apiVersion: v2
+    appVersion: 3.1.0
+    created: "2025-03-04T15:53:18.664090079Z"
+    description: A Helm chart for m365-exporter
+    digest: cadc51b2ec635ef80b27e0fda62e48daa0e59062fdf6859a9d8ad780813e62c0
+    maintainers:
+    - email: engineering@cloudeteer.de
+      name: cloudeteer
+      url: https://cloudeteer.de
+    name: m365-exporter
+    type: application
+    urls:
+    - https://github.com/cloudeteer/helm-charts/releases/download/m365-exporter-1.0.0/m365-exporter-1.0.0.tgz
+    version: 1.0.0
+generated: "2025-03-04T15:53:18.664095439Z"
