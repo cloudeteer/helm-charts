@@ -32,5 +32,13 @@ jobs:
         uses: helm/kind-action@v1.12.0
         if: steps.list-changed.outputs.changed == 'true'
 
+      - name: Apply Prometheus Operator CRDs (unless for charts already installing it)
+        env:
+          CHANGED_LIST: ${{ steps.list-changed.outputs.changed_list }}
+        run: |
+          helm install prometheus-operator-crds oci://ghcr.io/prometheus-community/charts/prometheus-operator-crds
+        if: steps.list-changed.outputs.changed == 'true'
+
       - name: Run chart-testing (install)
         run: ct install --debug --config charts/ct.yaml
+        if: steps.list-changed.outputs.changed == 'true'

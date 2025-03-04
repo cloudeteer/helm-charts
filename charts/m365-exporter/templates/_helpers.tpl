@@ -36,7 +36,6 @@ Common labels
 {{- define "m365-exporter.labels" -}}
 {{ include "m365-exporter.selectorLabels" . }}
 helm.sh/chart: {{ include "m365-exporter.chart" . }}
-app.kubernetes.io/managed-by: {{ .Release.Service }}
 app.kubernetes.io/version: "{{ replace "+" "_" .Chart.Version }}"
 app.kubernetes.io/part-of: {{ include "m365-exporter.name" . }}
 release: {{ $.Release.Name | quote }}
