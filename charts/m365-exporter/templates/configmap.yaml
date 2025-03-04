@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "m365-exporter.fullname" . }}-config
+  labels:
+    {{- include "m365-exporter.labels" . | nindent 4 }}
+data:
+  m365-exporter-config.yaml: |
+    {{- .Values.config | toYaml | nindent 4 }}

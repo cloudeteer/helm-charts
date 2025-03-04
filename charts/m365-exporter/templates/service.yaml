@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "m365-exporter.serviceAccountName" . }}
+  labels:
+    {{- include "m365-exporter.labels" . | nindent 4 }}
+  {{- with .Values.service.labels }}
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with .Values.service.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http
+      protocol: TCP
+      {{- if semverCompare ">=1.20" .Capabilities.KubeVersion.Version }}
+      appProtocol: http
+      {{- end }}
+  selector:
+    {{- include "m365-exporter.selectorLabels" . | nindent 4 }}

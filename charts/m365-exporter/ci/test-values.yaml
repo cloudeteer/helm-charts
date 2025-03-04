@@ -1,0 +1,5 @@
+env:
+  AZURE_TENANT_ID: "776b5491-cd02-4f01-a74c-9cc97b5082a3"
+
+serviceMonitor:
+  enabled: true

@@ -1,0 +1,105 @@
+# Default values for m365-exporter.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+global:
+  imagePullSecrets: []
+
+replicaCount: 1
+
+imagePullSecrets: []
+image:
+  repository: ghcr.io/cloudeteer/m365-exporter
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+config:
+  oneDrive:
+    scrambleNames: true
+
+nameOverride: ""
+fullnameOverride: ""
+
+
+podAnnotations: {}
+  # -- required for Azure workload identity: azure.workload.identity/use: "true"
+podLabels: {}
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # -- required for Azure workload identity: azure.workload.identity/client-id: ""
+  annotations: {}
+
+  # Labels to add to the service account
+  labels: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+  # Configure automountServiceAccountToken
+  automountServiceAccountToken: false
+
+service:
+  annotations: {}
+  labels: {}
+
+podSecurityContext:
+  runAsUser: 65532
+  runAsGroup: 65532
+  fsGroup: 65532
+  runAsNonRoot: true
+  seccompProfile:
+    type: RuntimeDefault
+
+securityContext:
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  capabilities:
+    drop: ["ALL"]
+
+serviceMonitor:
+  enabled: false
+  interval: 1m
+  metricRelabelings: []
+  relabelings: {}
+  additionalLabels: {}
+
+livenessProbe:
+  enabled: true
+  httpGet:
+    path: /health
+    port: http
+  initialDelaySeconds: 10
+
+readinessProbe:
+  enabled: true
+  httpGet:
+    path: /health
+    port: http
+  initialDelaySeconds: 5
+
+resources: {}
+#  limits:
+#    memory: 256Mi
+#  requests:
+#    cpu: 50m
+#    memory: 128Mi
+
+env: {}
+#  M365_ONEDRIVE_SCRAMBLESALT: "foobar" # <--- set custom salt here
+
+secrets: {}
+
+nodeSelector:
+  kubernetes.io/os: linux
+
+tolerations: []
+
+affinity: {}
+
+priorityClassName: ""
+
+extraVolumeMounts: []
+extraVolumes: []

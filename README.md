@@ -1,8 +1,6 @@
-[![CI](https://github.com/cloudeteer/m365-exporter/workflows/CI/badge.svg)](https://github.com/cloudeteer/m365-exporter/actions?query=workflow%3ACI)
-[![GitHub license](https://img.shields.io/github/license/cloudeteer/m365-exporter)](https://github.com/cloudeteer/m365-exporter/blob/master/LICENSE.txt)
-[![Current Release](https://img.shields.io/github/release/cloudeteer/m365-exporter.svg?logo=github)](https://github.com/cloudeteer/m365-exporter/releases/latest)
-[![GitHub Repo stars](https://img.shields.io/github/stars/cloudeteer/m365-exporter?style=flat&logo=github)](https://github.com/cloudeteer/m365-exporter/stargazers)
-[![GitHub all releases](https://img.shields.io/github/downloads/cloudeteer/m365-exporter/total?logo=github)](https://github.com/cloudeteer/m365-exporter/releases/latest)
+[![GitHub license](https://img.shields.io/github/license/cloudeteer/helm-charts)](https://github.com/cloudeteer/helm-charts/blob/master/LICENSE.txt)
+[![GitHub Repo stars](https://img.shields.io/github/stars/cloudeteer/helm-charts?style=flat&logo=github)](https://github.com/cloudeteer/helm-charts/stargazers)
+[![GitHub all releases](https://img.shields.io/github/downloads/cloudeteer/helm-charts/total?logo=github)](https://github.com/cloudeteer/helm-charts/releases/latest)
 
 ---
 
