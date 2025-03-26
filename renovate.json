@@ -24,6 +24,13 @@
       "matchPackageNames": [
         "*"
       ]
+    },
+    {
+      "groupName": "docker",
+      "matchDatasources": ["docker"],
+      "matchDepTypes": ["docker"],
+      "matchManagers": ["regex"],
+      "matchDepNames": ["^[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*(?::\\d+)?/[a-zA-Z0-9-]+(?:/[a-zA-Z0-9-]+)*$"]
     }
   ],
   "postUpdateOptions": [
@@ -40,8 +47,7 @@
       "datasourceTemplate": "{{#if (equals datasource 'github')}}github-tags{{else}}{{{datasource}}}{{/if}}",
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else if (equals datasource 'docker')}}docker{{else if (equals datasource 'deb')}}deb{{else}}semver{{/if}}",
       "extractVersionTemplate": "{{#if currentVersion}}{{{currentVersion}}}{{else}}{{{currentValue}}}{{/if}}",
-      "depNameTemplate": "{{depName}}",
-      "groupName": "docker"
+      "depNameTemplate": "{{depName}}"
     },
     {
       "customType": "regex",
