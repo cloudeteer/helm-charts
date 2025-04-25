@@ -1,0 +1,242 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "fillOpacity": 70,
+            "lineWidth": 0,
+            "spanNulls": 21600000
+          },
+          "decimals": 0,
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "serviceOperational"
+                },
+                "1": {
+                  "color": "orange",
+                  "index": 1,
+                  "text": "investigating"
+                },
+                "2": {
+                  "color": "orange",
+                  "index": 2,
+                  "text": "restoringService"
+                },
+                "3": {
+                  "color": "orange",
+                  "index": 3,
+                  "text": "verifyingService"
+                },
+                "4": {
+                  "color": "orange",
+                  "index": 4,
+                  "text": "serviceRestored"
+                },
+                "5": {
+                  "color": "orange",
+                  "index": 5,
+                  "text": "postIncidentReviewPublished"
+                },
+                "6": {
+                  "color": "orange",
+                  "index": 6,
+                  "text": "serviceDegradation"
+                },
+                "7": {
+                  "color": "red",
+                  "index": 7,
+                  "text": "serviceInterruption"
+                },
+                "8": {
+                  "color": "orange",
+                  "index": 8,
+                  "text": "extendedRecovery"
+                },
+                "9": {
+                  "color": "orange",
+                  "index": 9,
+                  "text": "falsePositive"
+                },
+                "10": {
+                  "color": "orange",
+                  "index": 10,
+                  "text": "investigationSuspended"
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "color": "#808080",
+                  "index": 11,
+                  "text": "No Data"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 10,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text",
+                "value": null
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 32,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "alignValue": "left",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "mergeValues": false,
+        "rowHeight": 0.9,
+        "showValue": "never",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": "$datasource",
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "sum(m365_service_health{tenant=\"${tenant}\",service_name=~\"${serviceName}\"}) by (service_name)",
+          "hide": false,
+          "instant": false,
+          "interval": "1h",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Service Status History",
+      "type": "state-timeline"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "default",
+          "value": "default"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "Data Source",
+        "multi": false,
+        "name": "datasource",
+        "options": [],
+        "query": "prometheus",
+        "queryValue": "",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "$datasource"
+        },
+        "definition": "label_values(m365_service_health, service_name)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Service Name",
+        "multi": true,
+        "name": "serviceName",
+        "options": [],
+        "query": {
+          "query": "label_values(m365_service_health, service_name)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "$datasource"
+        },
+        "definition": "label_values(m365_service_health,tenant)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Tenant",
+        "multi": false,
+        "name": "tenant",
+        "options": [],
+        "query": {
+          "query": "label_values(m365_service_health,tenant)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "M365 Services",
+  "uid": "m365-services",
+  "version": 1,
+  "weekStart": ""
+}

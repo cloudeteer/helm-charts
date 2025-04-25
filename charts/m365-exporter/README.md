@@ -1,6 +1,6 @@
 # m365-exporter
 
-![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.2.0](https://img.shields.io/badge/AppVersion-3.2.0-informational?style=flat-square)
+![Version: 1.2.0](https://img.shields.io/badge/Version-1.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.3.0](https://img.shields.io/badge/AppVersion-3.3.0-informational?style=flat-square)
 
 A Helm chart for m365-exporter
 
@@ -11,6 +11,10 @@ A Helm chart for m365-exporter
 ```shell
 helm install m365-exporter oci://ghcr.io/cloudeteer/charts/m365-exporter
 ```
+
+## New
+
+- now with dashboards included!
 
 ## Maintainers
 
@@ -29,6 +33,9 @@ helm install m365-exporter oci://ghcr.io/cloudeteer/charts/m365-exporter
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
 | config.oneDrive.scrambleNames | bool | `true` |  |
+| dashboards.configmap.annotations.grafana/folder | string | `"M365 Dashboards"` |  |
+| dashboards.configmap.labels.grafana/dashboard | string | `"1"` |  |
+| dashboards.enabled | bool | `true` |  |
 | env | object | `{}` |  |
 | extraVolumeMounts | list | `[]` |  |
 | extraVolumes | list | `[]` |  |
