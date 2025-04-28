@@ -14,9 +14,36 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
+dashboards:
+  enabled: true
+  configmap:
+    annotations:
+      grafana/folder: "M365 Dashboards"
+    labels:
+      grafana/dashboard: "1"
+
 config:
   oneDrive:
     scrambleNames: true
+#    enabled: true
+#  teams:
+#    enabled: true
+#  adsync:
+#    enabled: true
+#  exchange:
+#    enabled: true
+#  securescore:
+#    enabled: true
+#  license:
+#    enabled: true
+#  servicehealth:
+#    enabled: true
+#  intune:
+#    enabled: true
+#  entraid:
+#    enabled: true
+#  sharepoint:
+#    enabled: true
 
 nameOverride: ""
 fullnameOverride: ""
