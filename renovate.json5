@@ -1,0 +1,24 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:recommended',
+    'customManagers:helmChartYamlAppVersions',
+    'helpers:pinGitHubActionDigests',
+  ],
+
+
+  packageRules: [
+    {
+      matchFileNames: ["*"],
+      bumpVersions: [
+        {
+          filePatterns: ["{{packageFileDir}}/Chart.yaml"],
+          bumpType: "{{#if isPatch}}patch{{else}}minor{{/if}}",
+          matchStrings: [
+            'version:\\s(?<version>[^\\s]+)'
+          ]
+        }
+      ],
+    }
+  ]
+}
