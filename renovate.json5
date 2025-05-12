@@ -9,7 +9,7 @@
 
   packageRules: [
     {
-      matchFileNames: ["*"],
+      matchFileNames: ["!/argocd.ya?ml$/"],
       bumpVersions: [
         {
           filePatterns: ["{{packageFileDir}}/Chart.yaml"],
