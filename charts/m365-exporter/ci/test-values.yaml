@@ -1,5 +1,14 @@
+global:
+  test: "some-value"
+
 env:
   AZURE_TENANT_ID: "776b5491-cd02-4f01-a74c-9cc97b5082a3"
 
 serviceMonitor:
   enabled: true
+
+extraEnv:
+   - name: "MY_CUSTOM_VARIABLE"
+     value: "my_custom_value"
+   - name: "USE_TPL"
+     value: "{{ .Values.global.test }}"

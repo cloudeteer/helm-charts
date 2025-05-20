@@ -37,6 +37,7 @@ helm install m365-exporter oci://ghcr.io/cloudeteer/charts/m365-exporter
 | dashboards.configmap.labels.grafana/dashboard | string | `"1"` |  |
 | dashboards.enabled | bool | `true` |  |
 | env | object | `{}` |  |
+| extraEnv | list | `[]` |  |
 | extraVolumeMounts | list | `[]` |  |
 | extraVolumes | list | `[]` |  |
 | fullnameOverride | string | `""` |  |
