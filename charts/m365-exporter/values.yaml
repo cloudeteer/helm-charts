@@ -48,8 +48,7 @@ config:
 nameOverride: ""
 fullnameOverride: ""
 
-podAnnotations:
-  {}
+podAnnotations: {}
   # -- required for Azure workload identity: azure.workload.identity/use: "true"
 podLabels: {}
 
