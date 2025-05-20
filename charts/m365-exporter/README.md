@@ -1,6 +1,6 @@
 # m365-exporter
 
-![Version: 1.2.1](https://img.shields.io/badge/Version-1.2.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.3.0](https://img.shields.io/badge/AppVersion-3.3.0-informational?style=flat-square)
+![Version: 1.3.0](https://img.shields.io/badge/Version-1.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.3.0](https://img.shields.io/badge/AppVersion-3.3.0-informational?style=flat-square)
 
 A Helm chart for m365-exporter
 
@@ -37,6 +37,7 @@ helm install m365-exporter oci://ghcr.io/cloudeteer/charts/m365-exporter
 | dashboards.configmap.labels.grafana/dashboard | string | `"1"` |  |
 | dashboards.enabled | bool | `true` |  |
 | env | object | `{}` |  |
+| extraEnv | list | `[]` |  |
 | extraVolumeMounts | list | `[]` |  |
 | extraVolumes | list | `[]` |  |
 | fullnameOverride | string | `""` |  |

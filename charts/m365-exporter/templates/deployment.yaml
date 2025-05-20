@@ -40,16 +40,19 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-          {{- range $name, $value := .Values.env }}
-            - name: {{ $name | quote }}
-              value: {{ $value | quote }}
-          {{- end }}
           {{- range $name, $value := .Values.secrets }}
             - name: {{ $name | quote }}
               valueFrom:
                 secretKeyRef:
                   name: "{{ include "m365-exporter.fullname" $ }}"
                   key: {{ $name | quote }}
+          {{- end }}
+          {{- range $name, $value := .Values.env }}
+            - name: {{ $name | quote }}
+              value: {{ $value | quote }}
+          {{- end }}
+          {{- with .Values.extraEnv }}
+            {{- tpl (toYaml .) $ | nindent 12 }}
           {{- end }}
           ports:
             - name: http

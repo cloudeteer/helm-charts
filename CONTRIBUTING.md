@@ -28,3 +28,9 @@ Should you wish to work on an issue, please claim it first by commenting on the 
 * The PR title should be of the format: `subsystem: what this PR does` (for example, `m365-exporter: Add support for thing` or `docs: fix typo`).
 
 * If your patch is not getting reviewed or you need a specific person to review it, you can @-reply a reviewer asking for a review in the pull request or a comment.
+
+* run [helm-docs](https://formulae.brew.sh/formula/helm-docs) in the chart folder
+
+* bump Chart.yaml version
+
+* add tests to ci/test-values.yaml if possible
