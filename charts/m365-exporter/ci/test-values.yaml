@@ -8,7 +8,7 @@ serviceMonitor:
   enabled: true
 
 extraEnv:
-   - name: "MY_CUSTOM_VARIABLE"
-     value: "my_custom_value"
-   - name: "USE_TPL"
-     value: "{{ .Values.global.test }}"
+  - name: "MY_CUSTOM_VARIABLE"
+    value: "my_custom_value"
+  - name: "USE_TPL"
+    value: "{{ .Values.global.test }}"
