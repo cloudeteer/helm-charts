@@ -2,9 +2,9 @@ apiVersion: v2
 name: m365-exporter
 description: A Helm chart for m365-exporter
 type: application
-version: 1.5.0
+version: 1.6.0
 # renovate: image=ghcr.io/cloudeteer/m365-exporter
-appVersion: 3.5.0
+appVersion: 3.8.0
 home: https://github.com/cloudeteer/m365-exporter
 sources:
   - https://github.com/cloudeteer/helm-charts/tree/main/charts/m365-exporter
