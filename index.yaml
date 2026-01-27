@@ -2,6 +2,30 @@ apiVersion: v1
 entries:
   m365-exporter:
   - apiVersion: v2
+    appVersion: 3.8.0
+    created: "2026-01-27T10:22:35.6474904Z"
+    description: A Helm chart for m365-exporter
+    digest: b9988ca925267d68470c9fca54d0ca0ba2b285d034f87656f11f88e042d50d38
+    home: https://github.com/cloudeteer/m365-exporter
+    icon: https://raw.githubusercontent.com/cloudeteer/m365-exporter/refs/heads/main/docs/sources/assets/logo_m365_exporter.svg
+    keywords:
+    - prometheus
+    - exporter
+    - m365
+    - microsoft
+    maintainers:
+    - email: engineering@cloudeteer.de
+      name: cloudeteer
+      url: https://cloudeteer.de
+    name: m365-exporter
+    sources:
+    - https://github.com/cloudeteer/helm-charts/tree/main/charts/m365-exporter
+    - https://github.com/cloudeteer/m365-exporter
+    type: application
+    urls:
+    - https://github.com/cloudeteer/helm-charts/releases/download/m365-exporter-1.6.0/m365-exporter-1.6.0.tgz
+    version: 1.6.0
+  - apiVersion: v2
     appVersion: 3.5.0
     created: "2025-08-04T11:11:24.026244984Z"
     description: A Helm chart for m365-exporter
@@ -197,4 +221,4 @@ entries:
     urls:
     - https://github.com/cloudeteer/helm-charts/releases/download/m365-exporter-1.0.0/m365-exporter-1.0.0.tgz
     version: 1.0.0
-generated: "2025-08-04T11:11:24.026284838Z"
+generated: "2026-01-27T10:22:35.647541005Z"
