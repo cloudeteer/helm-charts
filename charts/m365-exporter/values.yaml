@@ -44,6 +44,9 @@ config:
 #    enabled: true
 #  sharepoint:
 #    enabled: true
+#  application:
+#    enabled: true
+#    filter: ''
 
 nameOverride: ""
 fullnameOverride: ""
